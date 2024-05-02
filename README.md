@@ -1,4 +1,4 @@
-# Campus Finder Local
+# Campus Finder
 
 This is a Next.js project that helps users find information about different campuses. It is built using Next.js, a React framework for server-side rendering and static site generation.
 
