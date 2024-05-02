@@ -1,6 +1,16 @@
 # Campus Finder
 
-This is a Next.js project that helps users find information about different campuses. It is built using Next.js, a React framework for server-side rendering and static site generation.
+Campus Finder helps students find their friends on college campuses.
+
+## Backend
+The backend is built using Node.js and Express.js to create RESTful APIs. Some of the routes I created include POST/login, POST/register, and GET/friendactivities — refer to routesIndex.js for more details. Bcrypt is used for password encryption, and JSON Web Tokens (JWTs) are used for user authentication. Websockets are also used to update user location in real-time.
+
+## Frontend
+The frontend is built using React and uses axios to fetch API calls asynchronously.
+
+## Database
+A simple MySQL database is used to store user information.
+[Table Schema]
 
 ## Getting Started
 
