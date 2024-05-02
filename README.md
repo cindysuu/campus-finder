@@ -2,6 +2,10 @@
 
 Campus Finder helps students find their friends on college campuses.
 
+### Features
+
+---
+
 ## Backend
 The backend of Campus Finder is built using Node.js with Express.js, facilitating scalable RESTful APIs that ensure efficient data handling and communication between the server and client-side applications.
 
@@ -15,12 +19,16 @@ The backend of Campus Finder is built using Node.js with Express.js, facilitatin
 
 For a complete list of API routes and their functionalities, refer to the `routesIndex.js` file within the project repository.
 
+---
+
 ## Frontend
 The frontend interface of Campus Finder is built using React, offering a responsive and intuitive user experience. It employs axios for making asynchronous API requests, thus providing a seamless and dynamic interaction with the backend.
 
 ### Interactive Features:
 - **User Dashboard**: Displays personalized information about user activities.
 - **Friend Locator**: Users can see the real-time locations of their friends on a map, promoting easier meet-ups.
+
+---
 
 ## Database
 Campus Finder uses a MySQL database to store and manage user-related data efficiently. Below are the schema details of the key tables used within the database:
@@ -55,6 +63,7 @@ This table records activities and their statuses for each user, including locati
 | `message`   | VARCHAR(255)    | Optional message related to the activity      |
 | `isActive`  | BOOLEAN DEFAULT | Status of the activity, default is TRUE       |
 
+---
 
 ## Getting Started
 
