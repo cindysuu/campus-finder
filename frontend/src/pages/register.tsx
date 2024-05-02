@@ -48,8 +48,8 @@ function Register() {
         try {
             await axios.post('http://localhost:8080/register', userData); // Send a POST request to the server
             alert('Registration successful!');
-        } catch (error: any) {
-            alert(error.response.data.message);
+        } catch (error) {
+            alert('Registration failed!');
         }
     }
 

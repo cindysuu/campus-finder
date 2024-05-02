@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import NavigationBar from '../components/NavigationBar.tsx';
 import '../styles/Profile.css';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { w3cwebsocket as W3CWebSocket } from 'websocket';
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -24,13 +24,13 @@ function Profile() {
   const [checked, setChecked] = useState(true);
 
   // Toggle
-  const handleChange = (event:any) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
   };
 
-  const updateActivity = (newActivityDetails: any) => {
+  const updateActivity = (newActivityDetails: Partial<UserActivity>) => {
     setUserActivity(prevState => ({
-      ...prevState,
+      ...prevState!,
       ...newActivityDetails
     }));
   };
@@ -44,12 +44,15 @@ function Profile() {
               'Authorization': `Bearer ${authToken}`
             }
           });
-      } catch (error: any) {
-          alert(error.response.data);
+      } catch (error: unknown) {
+        if (axios.isAxiosError(error)) {
+          const axiosError = error as AxiosError;
+          alert(axiosError.response?.data);
+        } else {
+          alert('Failed to make user inactive');
+        }
       }
     }
-
-    console.log('isToggled:', checked);
     if (checked === false) {
         console.log('User is inactive after toggle');
         makeInactive();
@@ -98,8 +101,9 @@ function Profile() {
           }
         });
         alert('Update activity successful!');
-    } catch (error: any) {
-        alert(error.response.data);
+    } catch (error) {
+      console.error('Error updating activity:', error);
+        alert('Failed to update activity')
     }
   }
 
@@ -114,17 +118,17 @@ function Profile() {
     }
   }
 
-  const removeActivity = (activityToRemove:any) => {
+  const removeActivity = (activityToRemove: string) => {
     setActivities(currentActivities => 
       currentActivities.filter(activity => activity !== activityToRemove)
     );
   };
   
-  const handleActivityChange = (activityValue: React.SetStateAction<string>) => {
+  const handleActivityChange = (activityValue: string) => {
     updateActivity({ activity: activityValue });
   };
 
-  const handleMessageChange = (event: any) => {
+  const handleMessageChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const newMessage = event.target.value;
     updateActivity({ message: newMessage });
   };
@@ -221,7 +225,6 @@ function Profile() {
             </div>
           ))}
 
-          {/* Add functionality for the user to add and remove their own activities — for now, just have these activities */}
           <input
             placeholder="Add your own activity"
             value={newActivity}
