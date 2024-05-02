@@ -15,41 +15,44 @@ The backend of Campus Finder is built using Node.js with Express.js, facilitatin
 
 For a complete list of API routes and their functionalities, refer to the `routesIndex.js` file within the project repository.
 
-The backend is built using Node.js and Express.js to create RESTful APIs. Some of the routes I created include POST/login, POST/register, and GET/friendactivities — refer to routesIndex.js for more details. Bcrypt is used for password encryption, and JSON Web Tokens (JWTs) are used for user authentication. Websockets are also used to update user location in real-time.
-
 ## Frontend
 The frontend interface of Campus Finder is built using React, offering a responsive and intuitive user experience. It employs axios for making asynchronous API requests, thus providing a seamless and dynamic interaction with the backend.
 
 ### Interactive Features:
-- **User Dashboard**: Displays personalized information and friend activities.
+- **User Dashboard**: Displays personalized information about user activities.
 - **Friend Locator**: Users can see the real-time locations of their friends on a map, promoting easier meet-ups.
 
 ## Database
 Campus Finder uses a MySQL database to store and manage user-related data efficiently. Below are the schema details of the key tables used within the database:
 ### Users Table
-| Field          | Type          | Description                  |
-|----------------|---------------|------------------------------|
-| `id`           | INT           | Primary key, auto-increment  |
-| `username`     | VARCHAR(50)   | User's username              |
-| `password`     | VARCHAR(255)  | Hashed password              |
-| `email`        | VARCHAR(100)  | User's email address         |
-| `created_at`   | TIMESTAMP     | Account creation timestamp   |
+This table stores information about the users registered on the platform.
 
-### Locations Table
-| Field          | Type          | Description                  |
-|----------------|---------------|------------------------------|
-| `user_id`      | INT           | Foreign key from Users table |
-| `latitude`     | DECIMAL(10,8) | Latitude of user location    |
-| `longitude`    | DECIMAL(11,8) | Longitude of user location   |
-| `timestamp`    | TIMESTAMP     | Timestamp of location update |
+| Field      | Type         | Description                |
+|------------|--------------|----------------------------|
+| `id`       | INT          | Primary key, auto-increment|
+| `name`     | VARCHAR(255) | User's full name           |
+| `email`    | VARCHAR(255) | User's email address, unique |
+| `password` | VARCHAR(255) | Hashed password for security |
 
-### Activities Table
-| Field          | Type          | Description                  |
-|----------------|---------------|------------------------------|
-| `activity_id`  | INT           | Primary key, auto-increment  |
-| `user_id`      | INT           | Foreign key from Users table |
-| `description`  | TEXT          | Description of the activity  |
-| `created_at`   | TIMESTAMP     | Activity timestamp           |
+### Friends Table
+This table manages the relationships between users, indicating friendships.
+
+| Field       | Type | Description                                   |
+|-------------|------|-----------------------------------------------|
+| `user_id`   | INT  | Foreign key from Users table, part of primary key |
+| `friend_id` | INT  | Foreign key from Users table, part of primary key |
+
+### User Activities Table
+This table records activities and their statuses for each user, including location data.
+
+| Field       | Type            | Description                                   |
+|-------------|-----------------|-----------------------------------------------|
+| `user_id`   | INT             | Foreign key from Users table                  |
+| `longitude` | DECIMAL(9,6)    | Longitude of the activity location            |
+| `latitude`  | DECIMAL(9,6)    | Latitude of the activity location             |
+| `activity`  | VARCHAR(255)    | Brief description of the activity             |
+| `message`   | VARCHAR(255)    | Optional message related to the activity      |
+| `isActive`  | BOOLEAN DEFAULT | Status of the activity, default is TRUE       |
 
 
 ## Getting Started
