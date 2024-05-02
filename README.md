@@ -6,7 +6,7 @@ Campus Finder helps students find their friends on college campuses.
 - **User Registration and Login**: Secure signup and login functionality, complete with session management.
 - **Friend Tracking**: Real-time tracking of friends’ locations and statuses on a campus map.
 - **Activity Updates**: Users can post updates about their current activities and status.
-- **Friend Management**: Add and remove friends by email.
+- **Friend Management**: Users can add and remove their friends by email to see their locations and status.
 - **Turn Status Off**: When a user turns their status off, their friends can no longer see their location or status.
 
 ---
