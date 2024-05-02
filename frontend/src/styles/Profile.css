@@ -1,0 +1,173 @@
+.profile-container {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+  
+.welcome-banner {
+  background-color: #f0f3f4;
+  color: #18313f;
+  border-radius: 10px;
+  margin: 50px 50px;
+  padding: 40px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.status-action-container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap; 
+  gap: 20px; 
+}
+
+.simple-container-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px 75px;
+  background-color: #ffffff;
+  margin: 20px 200px;
+  height: 100px;
+  width: 300px;
+}
+
+.simple-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px 75px;
+  background-color: #ffffff;
+  max-width: 100%;
+  /* This will make sure that the container takes up 50% of the screen width and leaves a 20px gap */
+  /* max-width: calc(50% - 20px);  */
+  margin: 20px;
+  box-sizing: border-box;
+}
+
+.text-title {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.text-content {
+  color: #666;
+  text-align: center;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #18303f;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  max-width: 200px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.submit-button:disabled, .submit-button:disabled:hover {
+  background: #b8b8b8; 
+  color: #666; 
+  cursor: not-allowed; 
+  pointer-events: none;
+}
+
+.status-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  margin: 20px;
+  width: 200px;
+}
+  
+.status-tag {
+  padding: 10px 15px;
+  background-color: #f0f3f4;
+  color: #717272;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.status-tag:hover {
+  background-color: #bdbdbd;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+.status-tag.active {
+  background-color: #bdbdbd;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.status-tag.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tag-with-remove {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.remove-tag-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background: transparent;
+  color: #70aecf;
+  width: 10px;
+  height: 20px;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.remove-tag-button:hover {
+  background: transparent;
+}
+
+.status-message {
+  margin: 20px;
+}
+
+.status-message input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .status-action-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .simple-container {
+    max-width: 90%;
+  }
+}
+  

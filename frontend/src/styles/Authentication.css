@@ -1,0 +1,85 @@
+ body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ } 
+  
+  .form-container {
+    max-width: 320px;
+    margin: 0px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #dfe3e8;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input::placeholder {
+    color: #aab7c4;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #15313f;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .form-footer a {
+    color: #4493b1;
+    text-decoration: none;
+  }
+  
+  .form-footer a:hover {
+    text-decoration: underline;
+  }
+
+.form-image {
+  display: block;
+  margin: 0 auto; /* This will center the image */
+  max-width: 100%; /* This ensures the image is responsive and doesn't overflow its container */
+  height: auto; /* This keeps the image aspect ratio */
+  max-height: 150px; /* Adjust the size as needed */
+}
+
+.image-container {
+  text-align: center; /* Centers inline elements like images */
+  /* margin-top: 100px; Add some space between the image and the form */
+  margin-bottom: 30px;
+}
+
+.status-message input {
+  width: 100%;  /* Makes the input take the full width of its container */
+  height: 50px; /* Sets a fixed height */
+  padding: 10px; /* Adds some padding inside the input for better text visibility */
+  font-size: 16px; /* Increases the font size for better readability */
+}
+
+  

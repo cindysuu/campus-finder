@@ -1,0 +1,10 @@
+.map-container {
+    height: 200px; /* Adjust the height as needed */
+  }
+  
+  .map-placeholder {
+    background-color: #ffffff;
+    height: 100%;
+    border-radius: 8px;
+  }
+  

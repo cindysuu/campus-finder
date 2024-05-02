@@ -1,0 +1,104 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6fafcf; /* Adjust the color as needed */
+  padding: 10px;
+  /* margin-bottom: 50px; */
+  /* border-bottom: solid 1px #000; */
+}
+
+.navbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* .logo {
+  font-size: 24px;
+  font-weight: bold;
+} */
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  /* Add your logo image here */
+  background-image: url('../LOC8.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px; 
+  height: 100px; 
+  text-indent: -9999px;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  padding: 10px;
+  color: #1b313e;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.navbar-links a:hover {
+  color: #061014;
+}
+
+.navbar-links.active {
+  display: flex;
+  color: #061014;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.toggle-button {
+  display: none;
+  background: black;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  font-size: 18px;
+  width: fit-content;
+}
+
+/* Medium screens (tablets, less than 768px) */
+@media (max-width: 767px) {
+  .toggle-button {
+    display: block;
+  }
+
+  .navbar-links {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+}
+
+/* Medium screens (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .toggle-button {
+    display: none; /* Hide toggle button on tablets and larger screens */
+  }
+  
+  .navbar-links {
+    display: flex; /* Always show navbar links on tablets and larger screens */
+  }
+  
+  .navbar-user {
+    display: block; /* Always show user icon/text on tablets and larger screens */
+  }
+}
+  

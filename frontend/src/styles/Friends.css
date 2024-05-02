@@ -1,0 +1,84 @@
+.friends-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.friend-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.friend-info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 50px; /* Set your desired size */
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.name {
+    font-weight: 500;
+}
+
+.email {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.remove-btn {
+    background-color: #efefef;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 100px;
+    max-height: 40px;
+}
+
+.remove-btn {
+    background-color: #efefef;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 100px;
+    max-height: 40px;
+}
+
+.remove-btn:hover {
+    background-color: #dbdbdb;
+}
+
+.simple-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+h1 {
+    font-weight: 500;
+    font-size: 28px;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 20px;
+}
