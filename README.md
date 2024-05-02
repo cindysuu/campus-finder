@@ -25,33 +25,6 @@ The frontend interface of Campus Finder is built using React, offering a respons
 ## Database
 Campus Finder uses a MySQL database to store and manage user-related data efficiently. Below are the schema details of the key tables used within the database:
 
-
-### Users Table
-| Field          | Type          | Description                  |
-|----------------|---------------|------------------------------|
-| `id`           | INT           | Primary key, auto-increment  |
-| `username`     | VARCHAR(50)   | User's username              |
-| `password`     | VARCHAR(255)  | Hashed password              |
-| `email`        | VARCHAR(100)  | User's email address         |
-| `created_at`   | TIMESTAMP     | Account creation timestamp   |
-
-### Locations Table
-| Field          | Type          | Description                  |
-|----------------|---------------|------------------------------|
-| `user_id`      | INT           | Foreign key from Users table |
-| `latitude`     | DECIMAL(10,8) | Latitude of user location    |
-| `longitude`    | DECIMAL(11,8) | Longitude of user location   |
-| `timestamp`    | TIMESTAMP     | Timestamp of location update |
-
-### Activities Table
-| Field          | Type          | Description                  |
-|----------------|---------------|------------------------------|
-| `activity_id`  | INT           | Primary key, auto-increment  |
-| `user_id`      | INT           | Foreign key from Users table |
-| `description`  | TEXT          | Description of the activity  |
-| `created_at`   | TIMESTAMP     | Activity timestamp           |
-
-
 ### Users Table
 This table stores information about the users registered on the platform.
 
