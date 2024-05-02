@@ -51,6 +51,7 @@ function Login() {
             localStorage.setItem('userToken', response.data.token)
             navigate('/home')
         } catch (error) {
+            // alert(error.response.data.message);
             alert('Invalid credentials!');
         }
     }
